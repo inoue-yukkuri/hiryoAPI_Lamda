@@ -2,6 +2,21 @@
 
 このリポジトリは、野菜の最適な肥料配合を計算するAWS Lambda関数のソースコードを含んでいます。
 
+## システムアーキテクチャ
+
+```
+[スマホアプリ]
+     │ POST JSON
+     ▼
+[Route 53]（www.saitekikun.com）
+     ▼
+[API Gateway]（HTTPSエンドポイント）
+     ▼
+[AWS Lambda]（最適化ロジック：PuLP + pandas）
+     ▼
+[レスポンス（JSON）]
+```
+
 ## 目的
 
 - 野菜の種類と肥料の種類を指定して、最適な肥料配合を計算
