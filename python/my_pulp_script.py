@@ -46,7 +46,8 @@ def hiryou_pulp(c_yasai,c_hiryou,custom_yasai,custom_hiryou):
     # custom_yasai を組み込む
     if custom_yasai:
         # Pydanticモデルから辞書への変換
-        custom_yasai_dict = custom_yasai.dict()
+        custom_yasai_dict = custom_yasai
+
         # その後、リストに変換
         custom_yasai_list = list(zip(*[custom_yasai_dict[key] for key in ['yasai', 'N', 'P', 'K', 'W']]))
         custom_yasai_df = pd.DataFrame(custom_yasai_list, columns=['yasai', 'N', 'P', 'K', 'W'])
